@@ -7,16 +7,21 @@ class Mensaje(models.Model):
     remitente = models.ForeignKey(User, related_name="remitente")
     destinatario = models.ForeignKey(User, related_name="destinatario")
     contenido = models.CharField(max_length=2000)
+    leido = models.BooleanField(default=False)
 
 
 class Comentario(models.Model):
     contenido = models.CharField(max_length=2000)
 
 
-class Publicaciones(models.Model):
+class Publicacion(models.Model):
     contenido = models.CharField(max_length=2000)
     comentarios = models.ForeignKey(Comentario)
+#    creador = models.ForeignKey(User)
 
+    def __unicode__(self):
+        name = self.creador.get_full_name()
+        return name
 
 class Notificacion(models.Model):
-    notificacion = models.ForeignKey(Publicaciones)
+    notificacion = models.ForeignKey(Publicacion)

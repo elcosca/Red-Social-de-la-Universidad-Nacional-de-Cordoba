@@ -14,10 +14,20 @@ class HomeController(View):
     def get(self, request):
         titulo = "Inicio"
         nombre = "Agustin"
-        return render(request, 'home.html', {'titulo': titulo, 'nombre': nombre})
+        publicaciones = Publicacion.objects.all()
+#        mens_no_leidos = Mensaje.object.filter(leido=False)
+        return render(request, 'home.html', {'titulo': titulo, 'nombre': nombre, 'publicaciones': publicaciones})
 
-class UserController(View):
+
+class Mensajes(View):
     def get(self, request):
+#        titulo = "Mensajes Privados"
+#        mensajes = Mensaje.objects.all()
+#        mens_no_leidos = Mensaje.object.filter(leido=False)
+
+
+#class UserController(View):
+#    def get(self, request):
         titulo = "Inicio"
         nombre = "Agustin"
         return render(request, 'user.html', {'titulo': titulo, 'nombre': nombre})
@@ -28,3 +38,9 @@ class TestController(View):
         titulo = "hola"
         return render(request, 'test.html', {'titulo': titulo})
 
+
+class MensajeVerController(View):
+
+#    def post(self, request):
+#        id_mensaje = request.POST("")
+        mensaje = Mensaje

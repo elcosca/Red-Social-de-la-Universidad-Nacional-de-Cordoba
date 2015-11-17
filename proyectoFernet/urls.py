@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^login/', LoginController.as_view()),
     url(r'^home/', HomeController.as_view()),
     url(r'^test/', TestController.as_view()),
-    url(r'^user/', UserController.as_view()),
+#    url(r'^user/', UserController.as_view()),
+    url(r'^mensaje/ver', MensajeVerController.as_view()),
 ]

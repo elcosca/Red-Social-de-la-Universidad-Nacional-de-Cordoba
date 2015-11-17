@@ -1,6 +1,40 @@
 <!DOCTYPE html>
 
 <head>
+
+<style type="text/css">
+
+        #container
+        {
+            display: table;
+            width:400px;
+            height:20px;
+        }
+
+        #leftBox
+        {
+            display: table-cell;
+            background-color:#006699;
+            width:20px;
+            height:20px;
+        }
+
+        #centerBox
+        {
+            display: table-cell;
+            background-color:#CC0000;
+            height:20px;
+        }
+
+        #rightBox
+        {
+            display: table-cell;
+            background-color:#006699;
+            width:20px;
+            height:20px;
+        }
+    </style>
+
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -13,7 +47,16 @@
     </head>
 </head>
 
-<body background= "/home/alumno/Documentos/proyectoFernet/coreF/static/imagenes/Universidad-Nacional-de-Cordoba.jpg">
+<body>
+
+{% load staticfiles %}
+<img src="home/alumno/Documentos/proyectoFernet/coreF/static/imagenes/Universidad-Nacional-de-Cordoba.jpg">
+
+<div id="container">
+        <div id="leftBox"></div>
+        <div id="centerBox">Content</div>
+        <div id="rightBox"></div>
+    </div>
 
 
 </body>
